@@ -1,0 +1,575 @@
+/* CSS Variables - Paleta Oficial de Cores */
+:root {
+    --verde-salvia: #78866B;
+    --areia-quente: #E8D9C1;
+    --cinza-mineral: #4B4F52;
+    --azul-petroleo: #274C5B;
+    --cobre-envelhecido: #B27C4C;
+    
+    /* Typography */
+    --font-title: 'Playfair Display', serif;
+    --font-body: 'Lato', sans-serif;
+    
+    /* Spacing */
+    --container-max-width: 1200px;
+    --section-padding: 4rem 0;
+    --element-spacing: 2rem;
+}
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: var(--font-body);
+    font-weight: 300;
+    line-height: 1.6;
+    color: var(--cinza-mineral);
+    background-color: #ffffff;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-title);
+    font-weight: 600;
+    line-height: 1.3;
+    color: var(--azul-petroleo);
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 700;
+}
+
+h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+}
+
+h3 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    color: var(--verde-salvia);
+}
+
+p {
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+    line-height: 1.7;
+}
+
+/* Container */
+.container {
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Header */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.nav-container {
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-text {
+    font-family: var(--font-title);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--azul-petroleo);
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--cinza-mineral);
+    font-weight: 400;
+    transition: color 0.2s ease;
+    position: relative;
+}
+
+.nav-menu a:hover,
+.nav-menu a:focus {
+    color: var(--verde-salvia);
+    outline: none;
+}
+
+.nav-menu a:focus {
+    outline: 2px solid var(--verde-salvia);
+    outline-offset: 2px;
+}
+
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.nav-toggle span {
+    width: 25px;
+    height: 3px;
+    background: var(--cinza-mineral);
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;    background: linear-gradient(135deg, rgba(39, 76, 91, 0.8), rgba(120, 134, 107, 0.6)), url("/psicologia/img/hero-contemplative.jpg");    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
+    text-align: center;
+    padding-top: 80px;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    z-index: 2;
+    position: relative;
+}
+
+.hero-title {
+    color: white;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-subtitle {
+    color: var(--areia-quente);
+    font-style: italic;
+    font-weight: 400;
+    margin-bottom: 3rem;
+    font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 400;
+    text-align: center;
+    transition: all 0.2s ease;
+    border: 2px solid transparent;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.btn-primary {
+    background-color: var(--verde-salvia);
+    color: white;
+    border-color: var(--verde-salvia);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: transparent;
+    color: var(--verde-salvia);
+    border-color: var(--verde-salvia);
+    transform: translateY(-2px);
+    outline: none;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: white;
+    border-color: white;
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus {
+    background-color: white;
+    color: var(--azul-petroleo);
+    transform: translateY(-2px);
+    outline: none;
+}
+
+/* Sections */
+.section {
+    padding: var(--section-padding);
+}
+
+.section:nth-child(even) {
+    background-color: var(--areia-quente);
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: var(--cobre-envelhecido);
+}
+
+/* Sobre Section */
+.sobre-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.sobre-text p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+/* Clínica Section */
+.clinica-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.clinica-content p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    text-align: justify;
+}
+
+/* Empresas Section */
+.empresas-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.empresas-content p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+.servicos-list,
+.proposta-list {
+    list-style: none;
+    margin: 2rem 0;
+}
+
+.servicos-list li,
+.proposta-list li {
+    position: relative;
+    padding-left: 2rem;
+    margin-bottom: 0.8rem;
+    font-size: 1.05rem;
+}
+
+.servicos-list li::before,
+.proposta-list li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--verde-salvia);
+    font-size: 1.5rem;
+    line-height: 1;
+}
+
+.cnpj-info {
+    background-color: rgba(120, 134, 107, 0.1);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--verde-salvia);
+    margin-top: 2rem;
+    font-weight: 400;
+}
+
+/* Contato Section */
+.contato-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contato-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.contato-item h3 {
+    color: var(--azul-petroleo);
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.contato-item a {
+    color: var(--verde-salvia);
+    text-decoration: none;
+    font-weight: 400;
+    transition: color 0.2s ease;
+}
+
+.contato-item a:hover,
+.contato-item a:focus {
+    color: var(--azul-petroleo);
+    text-decoration: underline;
+    outline: none;
+}
+
+.contato-item a:focus {
+    outline: 2px solid var(--verde-salvia);
+    outline-offset: 2px;
+}
+
+/* Footer */
+.footer {
+    background-color: var(--azul-petroleo);
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.footer p {
+    margin-bottom: 0.5rem;
+}
+
+.portfolio-link {
+    color: var(--areia-quente);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.portfolio-link:hover,
+.portfolio-link:focus {
+    color: white;
+    outline: none;
+}
+
+.portfolio-link:focus {
+    outline: 2px solid var(--areia-quente);
+    outline-offset: 2px;
+}
+
+/* WhatsApp Float Button */
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #25D366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    opacity: 0.7;
+}
+
+.whatsapp-float:hover,
+.whatsapp-float:focus {
+    opacity: 1;
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+    outline: none;
+}
+
+.whatsapp-float:focus {
+    outline: 3px solid var(--verde-salvia);
+    outline-offset: 3px;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .hero {
+        background-attachment: scroll;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .contato-info {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-menu {
+        position: fixed;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        padding: 2rem;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+    }
+    
+    .nav-menu.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    .nav-toggle {
+        display: flex;
+    }
+    
+    .nav-toggle.active span:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+    
+    .nav-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .nav-toggle.active span:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+    
+    .container {
+        padding: 0 1rem;
+    }
+    
+    .hero-content {
+        padding: 0 1rem;
+    }
+    
+    .section {
+        padding: 3rem 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .btn {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+    }
+    
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        bottom: 15px;
+        right: 15px;
+    }
+}
+
+/* Accessibility Improvements */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .btn-primary {
+        border-width: 3px;
+    }
+    
+    .btn-secondary {
+        border-width: 3px;
+    }
+    
+    .nav-menu a:focus,
+    .btn:focus,
+    .contato-item a:focus {
+        outline-width: 3px;
+    }
+}
+
+/* Print styles */
+@media print {
+    .header,
+    .whatsapp-float,
+    .hero-buttons {
+        display: none;
+    }
+    
+    .hero {
+        background: none;
+        color: black;
+        min-height: auto;
+        padding: 2rem 0;
+    }
+    
+    .hero-title,
+    .hero-subtitle {
+        color: black;
+    }
+    
+    .section {
+        page-break-inside: avoid;
+    }
+}
+
